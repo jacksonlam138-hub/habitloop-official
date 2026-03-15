@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HabitLoop — 让习惯养成像游戏一样有趣</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="config.js"></script>
+    <script>
+        // Vercel 部署时从环境变量注入
+        if (window.VERCEL_NOTION_API_KEY) {
+            window.NOTION_API_KEY = window.VERCEL_NOTION_API_KEY;
+        }
+        if (window.VERCEL_NOTION_DATABASE_ID) {
+            window.NOTION_DATABASE_ID = window.VERCEL_NOTION_DATABASE_ID;
+        }
+    </script>
 </head>
 <body>
     <!-- 导航栏 -->

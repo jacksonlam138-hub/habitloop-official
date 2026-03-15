@@ -10,9 +10,9 @@ document.querySelectorAll('.faq-question').forEach(question => {
 const form = document.getElementById('preRegisterForm');
 const successMessage = document.getElementById('successMessage');
 
-// Notion API 配置（需要用户自己配置）
-const NOTION_API_KEY = ''; // 你的 Notion Integration Token
-const NOTION_DATABASE_ID = ''; // 你的 Notion Database ID
+// Notion API 配置（从 window 对象读取）
+const NOTION_API_KEY = window.NOTION_API_KEY || '';
+const NOTION_DATABASE_ID = window.NOTION_DATABASE_ID || '';
 
 // 保存到 Notion 的函数
 async function saveToNotion(data) {
