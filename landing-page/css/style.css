@@ -390,6 +390,24 @@ ul {
     font-weight: bold;
 }
 
+.demo-link {
+    display: inline-flex;
+    align-items: center;
+    margin-top: var(--spacing-md);
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.demo-link:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
 /* === 核心功能 === */
 .features {
     padding: var(--spacing-xl) 0;
