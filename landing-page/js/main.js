@@ -101,10 +101,10 @@ form.addEventListener('submit', async function(e) {
         email: document.getElementById('email').value,
         activities: Array.from(document.querySelectorAll('input[name="activities"]:checked'))
             .map(el => el.value),
-        budget: document.getElementById('budget').value,
+        budget: document.querySelector('input[name="budget"]:checked')?.value || '10-20',
         features: Array.from(document.querySelectorAll('input[name="features"]:checked'))
             .map(el => el.value),
-        prepay: document.querySelector('input[name="prepay"]:checked').value
+        prepay: document.querySelector('input[name="prepay"]:checked')?.value || 'no'
     };
 
     // 验证
@@ -114,7 +114,7 @@ form.addEventListener('submit', async function(e) {
     }
 
     // 提交中状态
-    const submitBtn = form.querySelector('button[type="submit"]');
+    const submitBtn = form.querySelector('.submit-button');
     const originalText = submitBtn.textContent;
     submitBtn.disabled = true;
     submitBtn.textContent = '提交中...';
@@ -124,7 +124,7 @@ form.addEventListener('submit', async function(e) {
         await saveToNotion(formData);
 
         // 显示成功消息
-        form.classList.add('hidden');
+        form.style.display = 'none';
         successMessage.classList.remove('hidden');
 
         // 滚动到成功消息

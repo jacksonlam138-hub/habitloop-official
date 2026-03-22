@@ -547,86 +547,312 @@ ul {
     padding: var(--spacing-xl) 0;
 }
 
+/* === 注册表单样式（优化版） === */
+.register {
+    padding: var(--spacing-xxl) 0;
+    background: linear-gradient(180deg, #F9FAFB 0%, #FFFFFF 100%);
+}
+
 .register-container {
-    max-width: 900px;
+    max-width: 500px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: var(--spacing-xl);
-    align-items: start;
 }
 
-.register-info h2 {
-    font-size: 36px;
+.register-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.register-header h2 {
+    font-size: 32px;
     margin-bottom: var(--spacing-xs);
+    color: var(--gray-900);
 }
 
-.register-info p {
-    color: var(--gray-600);
-    margin-bottom: var(--spacing-lg);
+.register-header p {
+    color: var(--gray-500);
+    font-size: 16px;
 }
 
-.register-benefits {
+.register-badges {
     display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-}
-
-.benefit {
-    display: flex;
-    align-items: center;
+    justify-content: center;
     gap: var(--spacing-sm);
-    font-size: 18px;
+    margin-top: var(--spacing-md);
 }
 
-.benefit .check {
-    color: var(--success);
-    font-weight: bold;
+.register-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    background: #F0FDF4;
+    color: #16A34A;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
 }
 
 /* 表单样式 */
 .register-form {
     background: white;
     padding: var(--spacing-xl);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 20px 40px rgba(0,0,0,0.04);
+    border: 1px solid var(--gray-100);
 }
 
 .form-group {
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 20px;
 }
 
 .form-group label {
     display: block;
-    font-weight: 500;
-    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+    margin-bottom: 8px;
     color: var(--gray-700);
+    font-size: 14px;
 }
 
 .form-group input[type="email"],
 .form-group input[type="text"],
-.form-group select,
-.form-group textarea {
+.form-group select {
     width: 100%;
-    padding: 12px;
-    border: 2px solid var(--gray-200);
-    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    border: 1px solid var(--gray-300);
+    border-radius: 10px;
     font-size: 16px;
-    transition: border-color 0.2s;
+    transition: all 0.2s;
+    background: var(--gray-50);
 }
 
 .form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
+.form-group select:focus {
     outline: none;
+    border-color: var(--primary);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(0,97,254,0.1);
+}
+
+.form-group input::placeholder {
+    color: var(--gray-400);
+}
+
+/* 选项卡片样式 */
+.option-cards {
+    display: grid;
+    gap: 10px;
+}
+
+.option-card {
+    position: relative;
+}
+
+.option-card input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.option-card-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: var(--gray-50);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.option-card-label:hover {
+    background: white;
+    border-color: var(--gray-200);
+}
+
+.option-card input:checked + .option-card-label {
+    background: #F0F9FF;
     border-color: var(--primary);
 }
 
-.checkbox-group,
-.radio-group {
+.option-card-icon {
+    width: 40px;
+    height: 40px;
     display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-md);
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 8px;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.option-card-content {
+    flex: 1;
+}
+
+.option-card-title {
+    font-weight: 600;
+    color: var(--gray-900);
+    font-size: 15px;
+}
+
+.option-card-desc {
+    font-size: 13px;
+    color: var(--gray-500);
+    margin-top: 2px;
+}
+
+.option-card-check {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--gray-300);
+    border-radius: 6px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.option-card input:checked + .option-card-label .option-card-check {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.option-card input:checked + .option-card-label .option-card-check::after {
+    content: '✓';
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* 活动选择器 */
+.activity-selector {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.activity-option {
+    position: relative;
+}
+
+.activity-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.activity-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 12px;
+    background: var(--gray-50);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+.activity-label:hover {
+    background: white;
+    border-color: var(--gray-200);
+    transform: translateY(-2px);
+}
+
+.activity-option input:checked + .activity-label {
+    background: #F0F9FF;
+    border-color: var(--primary);
+}
+
+.activity-icon {
+    font-size: 28px;
+}
+
+.activity-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--gray-900);
+}
+
+/* 提交按钮 */
+.submit-button {
+    width: 100%;
+    padding: 16px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 10px;
+}
+
+.submit-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,97,254,0.3);
+}
+
+.submit-button:active {
+    transform: translateY(0);
+}
+
+.form-note {
+    text-align: center;
+    color: var(--gray-400);
+    font-size: 13px;
+    margin-top: 16px;
+}
+
+/* 成功消息 */
+.success-message {
+    text-align: center;
+    padding: 40px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 20px 40px rgba(0,0,0,0.04);
+}
+
+.success-icon {
+    font-size: 64px;
+    margin-bottom: 16px;
+    animation: successPop 0.5s ease-out;
+}
+
+@keyframes successPop {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.success-message h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: var(--gray-900);
+}
+
+.success-message p {
+    color: var(--gray-500);
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .activity-selector {
+        grid-template-columns: 1fr;
+    }
+
+    .register-form {
+        padding: var(--spacing-lg);
+    }
+}
 }
 
 .checkbox,
