@@ -249,128 +249,84 @@
         <div class="container">
             <div class="register-container">
                 <div class="register-header">
-                    <h2>立即预注册</h2>
-                    <p>填写信息，即可锁定早鸟名额</p>
-                    <div class="register-badges">
-                        <span class="register-badge">✓ 完全免费</span>
-                        <span class="register-badge">✓ 早鸟优惠</span>
-                        <span class="register-badge">✓ 上线通知</span>
-                    </div>
+                    <h2>预注册</h2>
+                    <p>上线后第一时间通知</p>
                 </div>
 
                 <form class="register-form" id="preRegisterForm">
                     <div class="form-group">
-                        <label>邮箱地址 *</label>
+                        <label>邮箱</label>
                         <input type="email" id="email" required placeholder="your@email.com">
                     </div>
 
                     <div class="form-group">
-                        <label>感兴趣的活动（可多选）</label>
-                        <div class="activity-selector">
-                            <div class="activity-option">
-                                <input type="checkbox" id="act-fitness" name="activities" value="fitness">
-                                <label for="act-fitness" class="activity-label">
-                                    <span class="activity-icon">🏋️</span>
-                                    <span class="activity-name">健身/运动</span>
-                                </label>
-                            </div>
-                            <div class="activity-option">
-                                <input type="checkbox" id="act-ai" name="activities" value="ai">
-                                <label for="act-ai" class="activity-label">
-                                    <span class="activity-icon">🤖</span>
-                                    <span class="activity-name">AI学习</span>
-                                </label>
-                            </div>
-                            <div class="activity-option">
-                                <input type="checkbox" id="act-english" name="activities" value="english">
-                                <label for="act-english" class="activity-label">
-                                    <span class="activity-icon">🌍</span>
-                                    <span class="activity-name">英语学习</span>
-                                </label>
-                            </div>
+                        <label>感兴趣的活动</label>
+                        <div class="activity-row">
+                            <label class="activity-item">
+                                <input type="checkbox" name="activities" value="fitness">
+                                <span>🏋️</span>
+                                <span>健身/运动</span>
+                            </label>
+                            <label class="activity-item">
+                                <input type="checkbox" name="activities" value="ai">
+                                <span>🤖</span>
+                                <span>AI学习</span>
+                            </label>
+                            <label class="activity-item">
+                                <input type="checkbox" name="activities" value="english">
+                                <span>🌍</span>
+                                <span>英语学习</span>
+                            </label>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label>月度预算范围</label>
-                        <div class="option-cards">
-                            <div class="option-card">
+                        <label>月度预算</label>
+                        <div class="budget-row">
+                            <div class="budget-item">
                                 <input type="radio" id="budget-1" name="budget" value="0-10">
-                                <label for="budget-1" class="option-card-label">
-                                    <div class="option-card-icon">💰</div>
-                                    <div class="option-card-content">
-                                        <div class="option-card-title">¥0 - ¥10 / 月</div>
-                                        <div class="option-card-desc">基础功能体验</div>
-                                    </div>
-                                    <div class="option-card-check"></div>
-                                </label>
+                                <label for="budget-1" class="budget-label">¥0-10</label>
                             </div>
-                            <div class="option-card">
+                            <div class="budget-item">
                                 <input type="radio" id="budget-2" name="budget" value="10-20" checked>
-                                <label for="budget-2" class="option-card-label">
-                                    <div class="option-card-icon">💎</div>
-                                    <div class="option-card-content">
-                                        <div class="option-card-title">¥10 - ¥20 / 月</div>
-                                        <div class="option-card-desc">完整功能推荐</div>
-                                    </div>
-                                    <div class="option-card-check"></div>
-                                </label>
+                                <label for="budget-2" class="budget-label">¥10-20</label>
                             </div>
-                            <div class="option-card">
+                            <div class="budget-item">
                                 <input type="radio" id="budget-3" name="budget" value="20+">
-                                <label for="budget-3" class="option-card-label">
-                                    <div class="option-card-icon">👑</div>
-                                    <div class="option-card-content">
-                                        <div class="option-card-title">¥20+ / 月</div>
-                                        <div class="option-card-desc">高级功能支持</div>
-                                    </div>
-                                    <div class="option-card-check"></div>
-                                </label>
+                                <label for="budget-3" class="budget-label">¥20+</label>
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label>最看重的功能（可多选）</label>
-                        <div class="activity-selector">
-                            <div class="activity-option">
-                                <input type="checkbox" id="feat-community" name="features" value="community">
-                                <label for="feat-community" class="activity-label">
-                                    <span class="activity-icon">👥</span>
-                                    <span class="activity-name">社群/找伙伴</span>
-                                </label>
-                            </div>
-                            <div class="activity-option">
-                                <input type="checkbox" id="feat-gamification" name="features" value="gamification">
-                                <label for="feat-gamification" class="activity-label">
-                                    <span class="activity-icon">🎮</span>
-                                    <span class="activity-name">游戏化奖励</span>
-                                </label>
-                            </div>
-                            <div class="activity-option">
-                                <input type="checkbox" id="feat-tracking" name="features" value="tracking">
-                                <label for="feat-tracking" class="activity-label">
-                                    <span class="activity-icon">📊</span>
-                                    <span class="activity-name">进度追踪</span>
-                                </label>
-                            </div>
-                            <div class="activity-option">
-                                <input type="checkbox" id="feat-reminders" name="features" value="reminders">
-                                <label for="feat-reminders" class="activity-label">
-                                    <span class="activity-icon">🔔</span>
-                                    <span class="activity-name">智能提醒</span>
-                                </label>
-                            </div>
+                        <label>最看重的功能</label>
+                        <div class="simple-checkbox-group">
+                            <label class="simple-checkbox">
+                                <input type="checkbox" name="features" value="community">
+                                <span>社群/找伙伴</span>
+                            </label>
+                            <label class="simple-checkbox">
+                                <input type="checkbox" name="features" value="gamification">
+                                <span>游戏化奖励</span>
+                            </label>
+                            <label class="simple-checkbox">
+                                <input type="checkbox" name="features" value="tracking">
+                                <span>进度追踪</span>
+                            </label>
+                            <label class="simple-checkbox">
+                                <input type="checkbox" name="features" value="reminders">
+                                <span>智能提醒</span>
+                            </label>
                         </div>
                     </div>
 
-                    <button type="submit" class="submit-button">立即预注册，锁定早鸟名额</button>
+                    <button type="submit" class="submit-button">预注册</button>
                     <p class="form-note">提交即表示同意接收产品上线通知</p>
                 </form>
 
                 <div id="successMessage" class="success-message hidden">
-                    <div class="success-icon">🎉</div>
-                    <h3>预注册成功！</h3>
+                    <div class="success-icon">✓</div>
+                    <h3>预注册成功</h3>
                     <p>感谢您的支持，我们会第一时间通知您上线消息。</p>
                 </div>
             </div>

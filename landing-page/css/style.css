@@ -87,34 +87,23 @@ ul {
     list-style: none;
 }
 
-/* === 按钮样式 === */
-.btn-primary, .btn-block, .btn-large {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-xs);
-    padding: 12px 28px;
-    background: var(--primary);
+/* === 按钮样式（极简版） === */
+.btn-primary, .btn-large {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--gray-900);
     color: white;
-    border-radius: var(--radius-sm);
+    border-radius: 6px;
     font-weight: 500;
-    font-size: 16px;
-    transition: all 0.3s ease;
+    font-size: 14px;
     border: none;
     cursor: pointer;
+    text-decoration: none;
 }
 
-.btn-primary:hover, .btn-block:hover, .btn-large:hover {
-    background: var(--primary-dark);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+.btn-primary:hover, .btn-large:hover {
+    background: var(--gray-800);
 }
-
-.btn-block {
-    width: 100%;
-}
-
-.btn-large {
     padding: 16px 36px;
     font-size: 18px;
     border-radius: var(--radius-md);
@@ -161,28 +150,29 @@ ul {
     color: var(--primary);
 }
 
-/* === Hero 区域 === */
+/* === Hero 区域（极简版） === */
 .hero {
-    padding: 160px 0 100px;
-    background: linear-gradient(135deg, #F0F7FF 0%, #FFFFFF 100%);
+    padding: 120px 0 80px;
+    background: white;
 }
 
 .hero .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-xl);
+    gap: 60px;
     align-items: center;
 }
 
 .hero h1 {
-    font-size: 56px;
-    line-height: 1.1;
-    margin-bottom: var(--spacing-md);
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 16px;
     color: var(--gray-900);
+    font-weight: 600;
 }
 
 .hero-subtitle {
-    font-size: 20px;
+    font-size: 16px;
     color: var(--gray-600);
     margin-bottom: var(--spacing-lg);
 }
@@ -469,137 +459,105 @@ ul {
     margin-top: var(--spacing-xl);
 }
 
+/* === 价格计划（极简版） === */
+.pricing {
+    padding: 60px 0;
+    background: var(--gray-50);
+}
+
+.pricing h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 24px;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
 .pricing-card {
     background: white;
-    padding: var(--spacing-xl);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
-    position: relative;
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid var(--gray-200);
 }
 
 .pricing-card.featured {
-    border: 3px solid var(--primary);
-    box-shadow: var(--shadow-xl);
-}
-
-.pricing-badge {
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--gray-900);
-    color: white;
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-}
-
-.pricing-badge.hot {
-    background: var(--accent);
+    border-color: var(--gray-900);
 }
 
 .pricing-card h3 {
-    font-size: 20px;
-    margin-bottom: var(--spacing-md);
+    font-size: 16px;
+    margin-bottom: 16px;
+    color: var(--gray-900);
 }
 
 .price {
-    margin-bottom: var(--spacing-lg);
-}
-
-.currency {
-    font-size: 24px;
-    color: var(--gray-500);
-    vertical-align: top;
+    margin-bottom: 20px;
 }
 
 .amount {
-    font-size: 48px;
-    font-weight: 700;
+    font-size: 32px;
+    font-weight: 600;
     color: var(--gray-900);
 }
 
 .period {
+    font-size: 14px;
     color: var(--gray-500);
-    margin-left: 4px;
 }
 
-.original {
-    display: block;
-    font-size: 14px;
-    color: var(--gray-400);
-    text-decoration: line-through;
-    margin-top: 4px;
+.pricing-card ul {
+    list-style: none;
+    margin-bottom: 20px;
 }
 
 .pricing-card ul li {
-    padding: 8px 0;
+    padding: 6px 0;
+    font-size: 14px;
     color: var(--gray-600);
 }
 
-.pricing-card .btn-block {
-    margin-top: var(--spacing-md);
+.pricing-card ul li::before {
+    content: "✓ ";
+    color: var(--gray-900);
 }
 
-/* === 预注册表单 === */
+/* === 注册表单样式（极简版） === */
 .register {
     padding: var(--spacing-xl) 0;
-}
-
-/* === 注册表单样式（优化版） === */
-.register {
-    padding: var(--spacing-xxl) 0;
-    background: linear-gradient(180deg, #F9FAFB 0%, #FFFFFF 100%);
+    background: var(--bg-white);
 }
 
 .register-container {
-    max-width: 500px;
+    max-width: 440px;
     margin: 0 auto;
 }
 
 .register-header {
     text-align: center;
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: 32px;
 }
 
 .register-header h2 {
-    font-size: 32px;
-    margin-bottom: var(--spacing-xs);
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
     color: var(--gray-900);
 }
 
 .register-header p {
     color: var(--gray-500);
-    font-size: 16px;
-}
-
-.register-badges {
-    display: flex;
-    justify-content: center;
-    gap: var(--spacing-sm);
-    margin-top: var(--spacing-md);
-}
-
-.register-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 14px;
-    background: #F0FDF4;
-    color: #16A34A;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 14px;
 }
 
 /* 表单样式 */
 .register-form {
     background: white;
-    padding: var(--spacing-xl);
-    border-radius: 16px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 20px 40px rgba(0,0,0,0.04);
-    border: 1px solid var(--gray-100);
 }
 
 .form-group {
@@ -608,249 +566,196 @@ ul {
 
 .form-group label {
     display: block;
-    font-weight: 600;
-    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 6px;
     color: var(--gray-700);
-    font-size: 14px;
 }
 
 .form-group input[type="email"],
 .form-group input[type="text"],
 .form-group select {
     width: 100%;
-    padding: 14px 16px;
+    padding: 10px 12px;
     border: 1px solid var(--gray-300);
-    border-radius: 10px;
-    font-size: 16px;
-    transition: all 0.2s;
-    background: var(--gray-50);
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.15s;
+    background: white;
 }
 
 .form-group input:focus,
 .form-group select:focus {
     outline: none;
-    border-color: var(--primary);
-    background: white;
-    box-shadow: 0 0 0 3px rgba(0,97,254,0.1);
+    border-color: var(--gray-900);
 }
 
 .form-group input::placeholder {
     color: var(--gray-400);
 }
 
-/* 选项卡片样式 */
-.option-cards {
-    display: grid;
+/* 简洁的选项样式 */
+.simple-checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.simple-checkbox {
+    display: flex;
+    align-items: center;
     gap: 10px;
-}
-
-.option-card {
-    position: relative;
-}
-
-.option-card input {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-}
-
-.option-card-label {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 16px;
-    background: var(--gray-50);
-    border: 2px solid transparent;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.option-card-label:hover {
-    background: white;
-    border-color: var(--gray-200);
-}
-
-.option-card input:checked + .option-card-label {
-    background: #F0F9FF;
-    border-color: var(--primary);
-}
-
-.option-card-icon {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: white;
-    border-radius: 8px;
-    font-size: 20px;
-    flex-shrink: 0;
-}
-
-.option-card-content {
-    flex: 1;
-}
-
-.option-card-title {
-    font-weight: 600;
-    color: var(--gray-900);
-    font-size: 15px;
-}
-
-.option-card-desc {
-    font-size: 13px;
-    color: var(--gray-500);
-    margin-top: 2px;
-}
-
-.option-card-check {
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--gray-300);
+    padding: 10px 12px;
+    border: 1px solid var(--gray-200);
     border-radius: 6px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s;
+    cursor: pointer;
+    transition: all 0.15s;
 }
 
-.option-card input:checked + .option-card-label .option-card-check {
-    background: var(--primary);
-    border-color: var(--primary);
+.simple-checkbox:hover {
+    background: var(--gray-50);
 }
 
-.option-card input:checked + .option-card-label .option-card-check::after {
-    content: '✓';
-    color: white;
-    font-size: 12px;
-    font-weight: bold;
+.simple-checkbox input {
+    margin: 0;
 }
 
-/* 活动选择器 */
-.activity-selector {
+.simple-checkbox span {
+    font-size: 14px;
+    color: var(--gray-700);
+}
+
+.simple-checkbox input:checked + span {
+    color: var(--gray-900);
+}
+
+/* 活动选择 - 横向排列 */
+.activity-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 8px;
 }
 
-.activity-option {
-    position: relative;
-}
-
-.activity-option input {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-}
-
-.activity-label {
+.activity-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
-    padding: 16px 12px;
-    background: var(--gray-50);
-    border: 2px solid transparent;
-    border-radius: 12px;
+    gap: 6px;
+    padding: 12px;
+    border: 1px solid var(--gray-200);
+    border-radius: 6px;
     cursor: pointer;
-    transition: all 0.2s;
     text-align: center;
 }
 
-.activity-label:hover {
-    background: white;
-    border-color: var(--gray-200);
-    transform: translateY(-2px);
+.activity-item input {
+    display: none;
 }
 
-.activity-option input:checked + .activity-label {
-    background: #F0F9FF;
-    border-color: var(--primary);
+.activity-item span:first-child {
+    font-size: 20px;
 }
 
-.activity-icon {
-    font-size: 28px;
+.activity-item span:last-child {
+    font-size: 12px;
+    color: var(--gray-600);
 }
 
-.activity-name {
-    font-weight: 600;
-    font-size: 14px;
+.activity-item:has(input:checked) {
+    border-color: var(--gray-900);
+    background: var(--gray-50);
+}
+
+.activity-item:has(input:checked) span:last-child {
     color: var(--gray-900);
+}
+
+/* 预算选择 - 横向排列 */
+.budget-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.budget-item {
+    position: relative;
+}
+
+.budget-item input {
+    display: none;
+}
+
+.budget-label {
+    display: block;
+    padding: 10px;
+    border: 1px solid var(--gray-200);
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--gray-600);
+}
+
+.budget-item input:checked + .budget-label {
+    border-color: var(--gray-900);
+    background: var(--gray-900);
+    color: white;
 }
 
 /* 提交按钮 */
 .submit-button {
     width: 100%;
-    padding: 16px;
-    background: var(--primary);
+    padding: 12px;
+    background: var(--gray-900);
     color: white;
     border: none;
-    border-radius: 12px;
-    font-size: 16px;
-    font-weight: 600;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
     cursor: pointer;
-    transition: all 0.2s;
-    margin-top: 10px;
+    margin-top: 24px;
+    transition: background-color 0.15s;
 }
 
 .submit-button:hover {
-    background: var(--primary-dark);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0,97,254,0.3);
-}
-
-.submit-button:active {
-    transform: translateY(0);
+    background: var(--gray-800);
 }
 
 .form-note {
     text-align: center;
     color: var(--gray-400);
-    font-size: 13px;
-    margin-top: 16px;
+    font-size: 12px;
+    margin-top: 12px;
 }
 
 /* 成功消息 */
 .success-message {
     text-align: center;
-    padding: 40px;
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 20px 40px rgba(0,0,0,0.04);
+    padding: 40px 20px;
 }
 
 .success-icon {
-    font-size: 64px;
-    margin-bottom: 16px;
-    animation: successPop 0.5s ease-out;
-}
-
-@keyframes successPop {
-    0% { transform: scale(0); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
+    font-size: 48px;
+    margin-bottom: 12px;
 }
 
 .success-message h3 {
-    font-size: 24px;
-    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 6px;
     color: var(--gray-900);
 }
 
 .success-message p {
+    font-size: 14px;
     color: var(--gray-500);
 }
 
 /* 响应式 */
 @media (max-width: 768px) {
-    .activity-selector {
+    .activity-row,
+    .budget-row {
         grid-template-columns: 1fr;
-    }
-
-    .register-form {
-        padding: var(--spacing-lg);
     }
 }
 }
